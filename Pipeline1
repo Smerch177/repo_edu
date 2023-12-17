@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Stage 1') {
+            steps {
+                sh 'echo "Stage 1"'
+                sh 'pwd'
+                sh 'mkdir free1'
+            }
+        }
+
+        stage('Stage 2') {
+            steps {
+                sh 'echo "Stage 2"'
+                sh 'cd free1/'
+                sh 'pwd'
+                sh 'ls'
+                sh 'echo "Freestyle1" > test.free'
+                sh 'cat test.free'
+            }
+        }
+
+        stage('Stage 3') {
+            steps {
+                sh 'echo "Stage 3"'
+                sh 'cd ../'
+                sh 'pwd'
+                sh 'rm -r ~/workspace/Freestyle1/free1/'
+                sh 'ls'
+            }
+        }
+    }
+}
