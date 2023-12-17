@@ -6,18 +6,18 @@ pipeline {
             steps {
                 sh 'echo "Stage 1"'
                 sh 'pwd'
-                sh 'mkdir free1'
+                sh 'mkdir pipe1'
             }
         }
 
         stage('Stage 2') {
             steps {
                 sh 'echo "Stage 2"'
-                sh 'cd free1/'
+                sh 'cd pipe1/'
                 sh 'pwd'
                 sh 'ls'
-                sh 'echo "Freestyle1" > test.free'
-                sh 'cat test.free'
+                sh 'echo "Pipeline1" > test.pipe'
+                sh 'cat test.pipe'
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
                 sh 'echo "Stage 3"'
                 sh 'cd ../'
                 sh 'pwd'
-                sh 'rm -r ~/workspace/Freestyle1/free1/'
+                sh 'rm -r ~/workspace/Pipeline1/pipe1/'
                 sh 'ls'
             }
         }
