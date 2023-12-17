@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <style>
+        body {
+            background-color: #555555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #output {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <input type="text" id="inputField" placeholder="Надрукуйте текст">
+    <button onclick="showText()">show</button>
+
+    <script>
+        function showText() {
+            var inputText = document.getElementById('inputField').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.textContent = inputText;
+            outputDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
